@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darul Amal Academy | দ্বীনি শিক্ষার এক বিশ্বস্ত প্রতিষ্ঠান</title>
+    <meta name="description" content="দারুল আমাল একাডেমি - ইলমে দ্বীন, বিশুদ্ধ আকীদা ও সহীহ মানহাজের আলোকে প্রণীত এক সমন্বিত শিক্ষাব্যবস্থা। অনলাইন ও অফলাইন ভর্তি চলছে।">
+    <meta name="keywords" content="Darul Amal Academy, Islamic Education, Madrasa, Online Admission, Quran, Hifz, নূরানী, নাজেরা, হিফজ, দারুল আমাল">
+    
+    <!-- Schema.org JSON-LD for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Darul Amal Academy",
+      "url": "https://darulamal.vercel.app",
+      "logo": "https://darulamal.vercel.app/images/logo.png",
+      "description": "Darul Amal Academy - ইলমে দ্বীন, বিশুদ্ধ আকীদা ও সহীহ মানহাজের আলোকে প্রণীত এক সমন্বিত শিক্ষাব্যবস্থা।",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/ Vistalegre, 18, local 3",
+        "addressLocality": "Ciutat Vella",
+        "postalCode": "08001",
+        "addressRegion": "Barcelona",
+        "addressCountry": "Spain"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34 611 81 74 44",
+        "contactType": "admission office"
+      }
+    }
+    </script>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B', /* Dark Islamic Green */
+                        secondary: '#D4AF37', /* Gold */
+                        accent: '#10B981', /* Emerald */
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navigation (3 Dot Menu included) -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo area -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="Darul Amal Logo" class="h-14 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=DARUL+AMAL+ACADEMY'">
+                        <span class="font-bold text-xl text-primary md:hidden lg:block">DARUL AMAL ACADEMY</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="nav-link active text-primary font-bold">🏠 হোম</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📖
+                        একাডেমী পরিচিতি</a>
+                    <a href="features.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">⭐
+                        বৈশিষ্ট্য</a>
+                    <a href="curriculum.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">📚 সিলেবাস</a>
+                    <a href="departments.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">🏫 বিভাগসমূহ</a>
+                    <a href="contact.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📞
+                        যোগাযোগ</a>
+
+                    <!-- Desktop 3 Dot Menu -->
+                    <div class="relative group cursor-pointer ml-2">
+                        <i
+                            class="fas fa-ellipsis-v text-gray-600 hover:text-primary text-xl px-4 py-2 rounded-full hover:bg-gray-100 transition"></i>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <a href="admission.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium border-b border-gray-100">📝
+                                ভর্তি</a>
+                            <a href="notice.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium">📌
+                                নোটিশ বোর্ড</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button (3 dot style) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-primary focus:outline-none p-3 rounded-full hover:bg-gray-100 transition">
+                        <i class="fas fa-ellipsis-v text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-bold text-primary bg-emerald-50">🏠 হোম</a>
+                <a href="about.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📖
+                    একাডেমী পরিচিতি</a>
+                <a href="features.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">⭐
+                    বৈশিষ্ট্য</a>
+                <a href="curriculum.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📚
+                    সিলেবাস</a>
+                <a href="departments.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏫
+                    বিভাগসমূহ</a>
+                <a href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📞
+                    যোগাযোগ</a>
+                <div class="border-t border-gray-200 mt-2 mb-2"></div>
+                <a href="admission.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📝
+                    ভর্তি</a>
+                <a href="notice.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📌
+                    নোটিশ বোর্ড</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] pt-32 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Enhanced Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/images bg.jpg.jpeg" alt="Madrasa Building"
+                class="w-full h-full object-cover object-center transform scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1584878486950-705fe9e300ac?auto=format&fit=crop&q=80&w=2000'">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#064E3B]/90 opacity-90"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-4 text-center mt-4 md:mt-8 flex flex-col items-center">
+
+            <!-- Academy Title -->
+            <div class="mb-4 md:mb-8 mt-4 floating" style="animation-duration: 4s;">
+                <h1
+                    class="text-4xl md:text-6xl lg:text-[5.5rem] leading-tight font-extrabold text-white tracking-widest drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)]">
+                    DARUL AMAL ACADEMY
+                </h1>
+            </div>
+
+            <!-- Animation Loop Container -->
+            <div class="hero-anim-container h-64 md:h-80 w-full max-w-4xl mx-auto relative mt-4 md:mt-8">
+                <!-- Big Slogan Box Layer -->
+                <div class="hero-slogan-layer w-full h-full absolute inset-0 flex items-center justify-center">
+                    <div class="glass flex items-center justify-center rounded-3xl p-6 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/20 relative w-full h-full bg-black/40 backdrop-blur-md">
+                        <p class="relative z-10 text-xl md:text-3xl lg:text-4xl text-white font-bold leading-relaxed drop-shadow-lg"
+                            style="text-shadow: 0 4px 15px rgba(0,0,0,1);">
+                            "ইলমে দ্বীন, বিশুদ্ধ আকীদা ও সহীহ মানহাজের আলোকে প্রণীত<br class="hidden md:block"> দাওয়াহ এবং
+                            তারবিয়াহ ভিত্তিক এক সমন্বিত শিক্ষাব্যবস্থা।"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Floating Logo Layer -->
+                <div class="hero-logo-layer w-full h-full absolute inset-0 flex items-center justify-center">
+                    <img src="images/logo.png" alt="Big Logo"
+                        class="w-48 h-48 md:w-[20rem] md:h-[20rem] object-contain drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)]"
+                        onerror="this.src='https://via.placeholder.com/400?text=Logo'">
+                </div>
+            </div>
+
+            <!-- Left Floating Admission Open Badge (Swapped from right) -->
+            <div class="absolute top-[85px] left-2 md:top-[120px] md:left-8 lg:left-16 floating-badge z-30">
+                <a href="contact.html" class="relative block group cursor-pointer">
+                    <!-- Glowing aura effect -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-yellow-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+                    
+                    <!-- The Badge Container -->
+                    <div class="relative flex items-center gap-3 md:gap-5 bg-gradient-to-br from-[#064E3B] to-[#047857] px-5 py-2.5 md:px-8 md:py-4 rounded-full border border-[#D4AF37]/60 shadow-2xl transform transition-transform duration-300 group-hover:scale-105">
+                        <!-- Pulsing Icon -->
+                        <div class="relative flex h-6 w-6 md:h-10 md:w-10 flex-shrink-0">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-60"></span>
+                            <span class="relative inline-flex rounded-full h-6 w-6 md:h-10 md:w-10 bg-gradient-to-r from-[#D4AF37] to-yellow-500 flex items-center justify-center text-[#064E3B] text-[10px] md:text-sm shadow-inner">
+                                <i class="fas fa-graduation-cap"></i>
+                            </span>
+                        </div>
+                        
+                        <!-- Text -->
+                        <div class="flex flex-col justify-center">
+                            <span class="text-[9px] md:text-xs text-[#F3E5AB] tracking-widest uppercase font-bold mb-0.5">নতুন সেশনে</span>
+                            <span class="text-sm md:text-2xl text-white font-black drop-shadow-md whitespace-nowrap">ভর্তি চলছে</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Floating Application Badge (Swapped from left & Enhanced) -->
+            <div class="absolute top-[160px] right-2 md:top-[120px] md:right-8 lg:right-16 floating-badge z-30" style="animation-delay: 1.5s;">
+                <a href="admission.html" class="relative block group cursor-pointer">
+                    <!-- Advanced glowing effect -->
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-emerald-400 via-secondary to-emerald-400 rounded-full blur-md opacity-30 group-hover:opacity-80 transition duration-500 animate-pulse"></div>
+                    
+                    <!-- The Badge Container: Premium Emerald/Gold Combo -->
+                    <div class="relative flex items-center gap-3 md:gap-5 bg-white px-5 py-3 md:px-8 md:py-5 rounded-full border-2 border-primary/20 shadow-[0_15px_35px_rgba(6,78,59,0.25)] transform transition-all duration-300 group-hover:translate-x-1 group-hover:border-primary/40 group-hover:shadow-[0_20px_45px_rgba(6,78,59,0.35)]">
+                        <!-- Professional Pulsing Icon -->
+                        <div class="relative flex h-7 w-7 md:h-12 md:w-12 flex-shrink-0">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-20"></span>
+                            <span class="relative inline-flex rounded-full h-7 w-7 md:h-12 md:w-12 bg-gradient-to-br from-primary to-[#047857] flex items-center justify-center text-secondary text-xs md:text-lg shadow-lg border border-secondary/30">
+                                <i class="fas fa-file-signature group-hover:scale-110 transition-transform"></i>
+                            </span>
+                        </div>
+                        
+                        <!-- Text with Premium Styling -->
+                        <div class="flex flex-col justify-center">
+                            <span class="text-[9px] md:text-[11px] text-primary/60 tracking-[0.2em] uppercase font-bold mb-0.5">অনলাইন পোর্টাল</span>
+                            <span class="text-sm md:text-2xl text-primary font-black whitespace-nowrap leading-none flex items-center gap-2">
+                                ভর্তির জন্য আবেদন করুন
+                                <i class="fas fa-arrow-right text-xs md:text-sm text-secondary animate-pulse"></i>
+                            </span>
+                        </div>
+                        
+                        <!-- Premium Detail: Decorative Corner -->
+                        <div class="absolute top-0 right-0 h-4 w-4 bg-secondary/10 rounded-tr-full rounded-bl-full pointer-events-none"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 animate-bounce cursor-pointer" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+            <i class="fas fa-chevron-down text-white/70 text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Departments Showcase Section -->
+    <section class="py-20 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Title -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary mb-6">বিভাগসমূহ</h2>
+                <div class="w-32 h-1.5 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Box 1: Noorani -->
+                <a href="curriculum.html#noorani"
+                    class="dept-card bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 flex flex-col group overflow-hidden fade-in relative"
+                    style="transition-delay: 100ms;">
+                    <div class="dept-card-img-wrap h-48 md:h-56 w-full relative bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <!-- Fallback Background/Icon if image missing -->
+                        <div class="absolute inset-0 bg-emerald-50 flex flex-col items-center justify-center text-primary/40 z-0">
+                            <i class="fas fa-book-open text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="text-xs font-semibold px-4 text-center">নূরানী কায়দা/আরবি শিখছে এমন শিশুদের ছবি দিন (images/noorani.jpg)</span>
+                        </div>
+                        <!-- Actual Image (Will cover fallback if exist) -->
+                        <img src="images/images noorani.jpg.jpeg" 
+                             alt="নূরানী বিভাগ" 
+                             class="dept-card-img w-full h-full object-cover relative z-10"
+                             onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-center bg-white relative z-20">
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-2">নূরানী বিভাগ</h3>
+                        <p class="text-xs md:text-sm text-gray-600 font-medium">(আম্মা পারা সহ)</p>
+                    </div>
+                </a>
+
+                <!-- Box 2: Nazera -->
+                <a href="curriculum.html#nazera"
+                    class="dept-card bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 flex flex-col group overflow-hidden fade-in relative"
+                    style="transition-delay: 200ms;">
+                    <div class="dept-card-img-wrap h-48 md:h-56 w-full relative bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <!-- Fallback Background/Icon if image missing -->
+                        <div class="absolute inset-0 bg-emerald-50 flex flex-col items-center justify-center text-primary/40 z-0">
+                            <i class="fas fa-quran text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="text-xs font-semibold px-4 text-center">কুরআন তিলাওয়াতরত শিশুদের ছবি দিন (images/nazera.jpg)</span>
+                        </div>
+                        <img src="images/images nazera.jpg.jpeg" 
+                             alt="নাজেরা বিভাগ" 
+                             class="dept-card-img w-full h-full object-cover relative z-10"
+                             onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-center bg-white relative z-20">
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-2">নাজেরা বিভাগ</h3>
+                        <p class="text-xs md:text-sm text-gray-600 font-medium opacity-100 text-center">(তাজবীদ ও তিলাওয়াত)</p>
+                    </div>
+                </a>
+
+                <!-- Box 3: Hifz -->
+                <a href="curriculum.html#hifz"
+                    class="dept-card bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 flex flex-col group overflow-hidden fade-in relative"
+                    style="transition-delay: 300ms;">
+                    <div class="dept-card-img-wrap h-48 md:h-56 w-full relative bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <!-- Fallback Background/Icon if image missing -->
+                        <div class="absolute inset-0 bg-emerald-50 flex flex-col items-center justify-center text-primary/40 z-0">
+                            <i class="fas fa-star-and-crescent text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="text-xs font-semibold px-4 text-center">হিফজ ও রিভিশনরত ছাত্রদের ছবি দিন (images/hifz.jpg)</span>
+                        </div>
+                        <img src="images/images hifz.jpg.jpeg" 
+                             alt="হিফজুল কুরআন" 
+                             class="dept-card-img w-full h-full object-cover relative z-10"
+                             onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-center bg-white relative z-20">
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-2 leading-snug">হিফজুল কুরআন <br>এন্ড রিভিশন</h3>
+                    </div>
+                </a>
+
+                <!-- Box 4: Uloom -->
+                <a href="curriculum.html#uloom1"
+                    class="dept-card bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 flex flex-col group overflow-hidden fade-in relative"
+                    style="transition-delay: 400ms;">
+                    <div class="dept-card-img-wrap h-48 md:h-56 w-full relative bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <!-- Fallback Background/Icon if image missing -->
+                        <div class="absolute inset-0 bg-emerald-50 flex flex-col items-center justify-center text-primary/40 z-0">
+                            <i class="fas fa-mosque text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="text-xs font-semibold px-4 text-center">ইসলামিক লাইব্রেরির সুন্দর ছবি দিন (images/uloom.jpg)</span>
+                        </div>
+                        <img src="images/images ulom.jpg.jpeg" 
+                             alt="উলুমে ইসলামিয়্যাহ" 
+                             class="dept-card-img w-full h-full object-cover relative z-10"
+                             onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-center bg-white relative z-20">
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-2">উলুমে ইসলামিয়্যাহ বিভাগ</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-16 fade-in">
+                <a href="departments.html"
+                    class="inline-flex items-center gap-3 bg-white text-primary font-bold hover:text-white px-8 py-4 rounded-full shadow-md hover:shadow-lg hover:bg-primary transition-all duration-300 text-lg group border border-gray-100">
+                    সকল বিভাগ দেখুন
+                    <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="islamic-gradient text-white pt-16 pb-8 border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="images/logo.png" alt="Logo" class="w-12 h-12 bg-white rounded-full p-1"
+                            onerror="this.src='https://via.placeholder.com/50'">
+                        <h4 class="text-2xl font-bold tracking-wide">DARUL AMAL ACADEMY</h4>
+                    </div>
+                    <p class="text-emerald-100/90 leading-relaxed text-lg">ইলমে দ্বীন, বিশুদ্ধ আকীদা ও সহীহ
+                        মানহাজের আলোকে প্রণীত এক সমন্বিত শিক্ষাব্যবস্থা।</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-secondary border-b border-emerald-700/50 pb-2 inline-block">
+                        গুরুত্বপূর্ণ লিংক</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html"
+                                class="hover:text-secondary hover:translate-x-2 inline-block transition-transform duration-300 text-emerald-50"><i
+                                    class="fas fa-angle-right text-xs mr-2 opacity-70"></i> একাডেমি পরিচিতি</a></li>
+                        <li><a href="departments.html"
+                                class="hover:text-secondary hover:translate-x-2 inline-block transition-transform duration-300 text-emerald-50"><i
+                                    class="fas fa-angle-right text-xs mr-2 opacity-70"></i> বিভাগসমূহ</a></li>
+                        <li><a href="admission.html"
+                                class="hover:text-secondary hover:translate-x-2 inline-block transition-transform duration-300 text-emerald-50"><i
+                                    class="fas fa-angle-right text-xs mr-2 opacity-70"></i> ভর্তি</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-secondary hover:translate-x-2 inline-block transition-transform duration-300 text-emerald-50"><i
+                                    class="fas fa-angle-right text-xs mr-2 opacity-70"></i> যোগাযোগ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-secondary border-b border-emerald-700/50 pb-2 inline-block">
+                        যোগাযোগ</h4>
+                    <ul class="space-y-4 text-emerald-50">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1.5 mr-3 text-secondary"></i>
+                            <span>C/ Vistalegre, 18, local 3, Ciutat Vella, 08001 Barcelona, Spain</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-secondary"></i>
+                            <span>+34 611 81 74 44</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-secondary"></i>
+                            <span>academydarulamal@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="text-center text-emerald-200/60 mt-8 pt-8 border-t border-emerald-800/50 flex flex-col md:flex-row justify-between items-center text-sm font-medium">
+                <p>&copy; 2026 Darul Amal Academy. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex gap-4">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বৈশিষ্ট্য | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B',
+                        secondary: '#D4AF37',
+                        accent: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Compact Navigation Header -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="Darul Amal Logo" class="h-10 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=DARUL+AMAL+ACADEMY'">
+                        <span class="font-bold text-lg text-primary md:hidden lg:block">DARUL AMAL ACADEMY</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">🏠
+                        হোম</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📖
+                        একাডেমী পরিচিতি</a>
+                    <a href="features.html" class="nav-link active text-primary font-bold">⭐ বৈশিষ্ট্য</a>
+                    <a href="curriculum.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">📚 সিলেবাস</a>
+                    <a href="departments.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">🏫 বিভাগসমূহ</a>
+                    <a href="contact.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📞
+                        যোগাযোগ</a>
+                    <!-- Desktop 3 Dot Menu -->
+                    <div class="relative group cursor-pointer ml-2">
+                        <i
+                            class="fas fa-ellipsis-v text-gray-600 hover:text-primary text-xl px-4 py-2 rounded-full hover:bg-gray-100 transition"></i>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <a href="admission.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium border-b border-gray-100">📝
+                                ভর্তি</a>
+                            <a href="notice.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium">📌
+                                নোটিশ বোর্ড</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-primary focus:outline-none p-3 rounded-full hover:bg-gray-100 transition">
+                        <i class="fas fa-ellipsis-v text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏠
+                    হোম</a>
+                <a href="about.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📖
+                    একাডেমী পরিচিতি</a>
+                <a href="features.html"
+                    class="block px-4 py-3 rounded-lg text-base font-bold text-primary bg-emerald-50">⭐ বৈশিষ্ট্য</a>
+                <a href="curriculum.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📚
+                    সিলেবাস</a>
+                <a href="departments.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏫
+                    বিভাগসমূহ</a>
+                <a href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📞
+                    যোগাযোগ</a>
+                <div class="border-t border-gray-200 mt-2 mb-2"></div>
+                <a href="admission.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📝
+                    ভর্তি</a>
+                <a href="notice.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📌
+                    নোটিশ বোর্ড</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-28 pb-10 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">আমাদের বৈশিষ্ট্য</h1>
+            <div class="w-16 h-1 bg-secondary mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 text-lg">আমাদের লক্ষ্য ও উদ্দেশ্য</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pb-24 relative">
+        <div
+            class="absolute inset-0 top-0 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] opacity-5 z-0 pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 transform hover:-translate-y-2 fade-in"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-16 h-16 bg-emerald-50 text-accent rounded-full flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <p class="text-xl font-bold text-gray-800 leading-relaxed text-justify">সহীহ ও মানসম্মত দ্বীনি
+                        শিক্ষা নিশ্চিত করা</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 transform hover:-translate-y-2 fade-in relative overflow-hidden"
+                    style="transition-delay: 200ms;">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-gold-50/20 rounded-full blur-xl z-0"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-amber-50 text-secondary rounded-full flex items-center justify-center mb-6 shadow-inner">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <p class="text-xl font-bold text-gray-800 leading-relaxed text-justify">ইলম, আমল, তারবিয়াহ ও
+                            দাওয়াতের সমন্বিত বিকাশ</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 transform hover:-translate-y-2 fade-in"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="w-16 h-16 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <p class="text-xl font-bold text-gray-800 leading-relaxed text-justify">সুন্নাহভিত্তিক আদর্শ চরিত্র
+                        গঠন</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 transform hover:-translate-y-2 fade-in md:col-span-1 lg:col-span-1"
+                    style="transition-delay: 400ms;">
+                    <div
+                        class="w-16 h-16 bg-indigo-50 text-indigo-500 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fas fa-book-reader text-2xl"></i>
+                    </div>
+                    <p class="text-xl font-bold text-gray-800 leading-relaxed text-justify">কুরআন-সুন্নাহর গভীর অধ্যয়ন
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-emerald-100 bg-gradient-to-br from-white to-emerald-50/50 transition-all duration-300 transform hover:-translate-y-2 fade-in md:col-span-2 lg:col-span-2 flex items-center gap-6"
+                    style="transition-delay: 500ms;">
+                    <div
+                        class="w-20 h-20 bg-primary/10 text-primary rounded-full flex flex-shrink-0 items-center justify-center shadow-inner">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <p class="text-2xl font-bold text-gray-800 leading-relaxed">ইখলাস, তাকওয়া ও চরিত্র গঠনে বিশেষ
+                        তারবিয়াত</p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="islamic-gradient text-white pt-10 pb-6 border-t-4 border-secondary mt-auto">
+        <div class="text-center">
+            <p class="text-emerald-100">&copy; 2026 Darul Amal Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

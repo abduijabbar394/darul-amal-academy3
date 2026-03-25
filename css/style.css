@@ -1,0 +1,223 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+
+body {
+    font-family: 'Anek Bangla', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.arabic-font {
+    font-family: 'Amiri', serif;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.pulse-btn {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes float-badge {
+    0% { transform: translateY(0px) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(-3deg); }
+}
+
+.floating-badge {
+    animation: float-badge 3s ease-in-out infinite;
+}
+
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Gradients */
+.gold-gradient-text {
+    background: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.islamic-gradient {
+    background: linear-gradient(135deg, #064E3B 0%, #047857 100%);
+}
+
+/* Nested Card Hover Effects */
+.parent-card:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.child-card {
+    transition: all 0.3s ease;
+}
+
+.child-card:hover {
+    background-color: #f0fdf4 !important; /* light green tailwind */
+    border-color: #10b981 !important; /* emerald 500 */
+    transform: scale(1.02) !important;
+}
+
+/* Accordion Transitions */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+/* Navigation Line Hover */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Animation Loop */
+@keyframes heroLoopSlogan {
+    0%, 42% { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    48%, 94% { opacity: 0; transform: translateY(-30px) scale(0.95); pointer-events: none; }
+    100% { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+}
+
+@keyframes heroLoopLogo {
+    0%, 42% { opacity: 0; transform: translateY(30px) scale(0.9); pointer-events: none; }
+    48%, 94% { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    100% { opacity: 0; transform: translateY(30px) scale(0.9); pointer-events: none; }
+}
+
+.hero-anim-container {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.hero-slogan-layer {
+    position: absolute;
+    animation: heroLoopSlogan 14s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+}
+
+.hero-logo-layer {
+    position: absolute;
+    animation: heroLoopLogo 14s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Department Cards Animation */
+.dept-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dept-card-img-wrap {
+    overflow: hidden;
+}
+
+.dept-card-img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dept-card:hover .dept-card-img {
+    transform: scale(1.08);
+}
+
+
+/* Admission Form Modernization */
+.form-input-focus:focus {
+    box-shadow: 0 0 0 4px rgba(6, 78, 89, 0.1);
+    border-color: #064E3B;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes fade-down {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-down {
+    animation: fade-down 0.4s ease-out forwards;
+}
+
+/* Premium Badge Enhancements */
+.badge-glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.badge-glow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive adjustments for badges on very small screens */
+@media (max-width: 480px) {
+    .floating-badge {
+        scale: 0.85;
+    }
+}

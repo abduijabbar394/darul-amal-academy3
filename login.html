@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অ্যাডমিন লগিন | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .login-bg {
+            background: linear-gradient(135deg, #064E3B 0%, #047857 100%);
+        }
+    </style>
+</head>
+<body class="login-bg min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-sm w-full space-y-8 animate-fade-in">
+        <div class="text-center font-bold text-emerald-900 mb-8">
+             <h1 class="text-2xl uppercase tracking-widest font-black">ADMIN ACCESS</h1>
+             <p class="text-xs text-secondary mt-2">আপনার সঠিক পাসওয়ার্ড দিয়ে ড্যাশবোর্ডে প্রবেশ করুন</p>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest pl-2">Email Address</label>
+                <input type="email" id="email" required placeholder="admin@example.com" 
+                       class="w-full px-5 py-4 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-emerald-50 focus:border-emerald-500 transition-all outline-none font-medium text-gray-700">
+            </div>
+
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest pl-2">Passcode</label>
+                <input type="password" id="password" required placeholder="••••••••" 
+                       class="w-full px-5 py-4 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-emerald-50 focus:border-emerald-500 transition-all outline-none font-black text-center text-lg tracking-[1em] placeholder-gray-300">
+            </div>
+
+            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-800 text-white font-black py-4 rounded-xl shadow-[0_8px_25px_rgba(6,78,59,0.3)] transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-widest group">
+                PROCEED TO DASHBOARD <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
+        </form>
+
+        <p id="error-msg" class="text-center text-red-500 text-xs font-bold hidden">ভুল ইমেইল অথবা পাসওয়ার্ড! আবার চেষ্টা করুন।</p>
+        
+        <div class="text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-10">
+            Secure Admin Gateway &copy; 2026
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.toLowerCase().trim();
+            const pass = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+            
+            // Authorized Admin Emails
+            const authorizedEmails = [
+                'jabbargaffarabdul@gmail.com',
+                'abdurrahmanbd898@gmail.com'
+            ];
+
+            // In a real app with Firebase, this would be a proper email/pass
+            if (authorizedEmails.includes(email) && pass === '123456') {
+                localStorage.setItem('adminLoggedIn', 'true');
+                localStorage.setItem('adminEmail', email); // Save current admin email
+                window.location.href = 'admin.html';
+            } else {
+                errorMsg.classList.remove('hidden');
+                setTimeout(() => errorMsg.classList.add('hidden'), 3000);
+            }
+        });
+    </script>
+</body>
+</html>

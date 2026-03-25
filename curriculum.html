@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সিলেবাস | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B',
+                        secondary: '#D4AF37',
+                        accent: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Compact Navigation Header -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="Darul Amal Logo" class="h-10 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=DARUL+AMAL+ACADEMY'">
+                        <span class="font-bold text-lg text-primary md:hidden lg:block">DARUL AMAL ACADEMY</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">🏠
+                        হোম</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📖
+                        একাডেমী পরিচিতি</a>
+                    <a href="features.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">⭐
+                        বৈশিষ্ট্য</a>
+                    <a href="curriculum.html" class="nav-link active text-primary font-bold">📚 সিলেবাস</a>
+                    <a href="departments.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">🏫 বিভাগসমূহ</a>
+                    <a href="contact.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📞
+                        যোগাযোগ</a>
+                    <!-- Desktop 3 Dot Menu -->
+                    <div class="relative group cursor-pointer ml-2">
+                        <i
+                            class="fas fa-ellipsis-v text-gray-600 hover:text-primary text-xl px-4 py-2 rounded-full hover:bg-gray-100 transition"></i>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <a href="admission.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium border-b border-gray-100">📝
+                                ভর্তি</a>
+                            <a href="notice.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium">📌
+                                নোটিশ বোর্ড</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-primary focus:outline-none p-3 rounded-full hover:bg-gray-100 transition">
+                        <i class="fas fa-ellipsis-v text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏠
+                    হোম</a>
+                <a href="about.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📖
+                    একাডেমী পরিচিতি</a>
+                <a href="features.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">⭐
+                    বৈশিষ্ট্য</a>
+                <a href="curriculum.html"
+                    class="block px-4 py-3 rounded-lg text-base font-bold text-primary bg-emerald-50">📚 সিলেবাস</a>
+                <a href="departments.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏫
+                    বিভাগসমূহ</a>
+                <a href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📞
+                    যোগাযোগ</a>
+                <div class="border-t border-gray-200 mt-2 mb-2"></div>
+                <a href="admission.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📝
+                    ভর্তি</a>
+                <a href="notice.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📌
+                    নোটিশ বোর্ড</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-28 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">আমাদের সিলেবাস</h1>
+            <div class="w-16 h-1 bg-secondary mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 text-lg">সিলেবাস বিস্তারিত দেখতে ক্লিক করুন</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pb-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- 1. Noorani -->
+            <div id="noorani"
+                class="mb-5 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden fade-in">
+                <button
+                    class="accordion-btn w-full px-6 py-5 flex items-center justify-between focus:outline-none bg-blue-50/50 hover:bg-blue-100/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-book-open text-2xl text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-gray-800 text-left">📘 নূরানী বিভাগ(আম্মা পারা সহ)</h3>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-white">
+                    <div class="p-6 border-t border-gray-100 text-gray-700 leading-relaxed font-medium">
+                        <p class="font-bold text-primary mb-3">🔷 ২. সিলেবাস</p>
+                        <p class="font-bold mb-3 text-lg">📘 নূরানী বিভাগ</p>
+                        <ul class="space-y-3 list-none pl-2 border-l-2 border-blue-200 ml-2">
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> আরবি হরফ মাখরাজ ও বেসিক সিফাত সহ
+                                শিক্ষা</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> একাডেমির" নিজস্ব বেসিক কায়দা"এর
+                                মাধ্যমে পাঠদান</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> নির্দিষ্ট সংখ্যক ছোট ছোট সূরা
+                                মুখস্থ</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> ইসলামী আকায়েদ সিরিজ-১</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> দৈনন্দিন মাসনূন দোয়া সিরিজ-১</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> প্র্যাকটিক্যাল সুন্নাহ(আ'মাল)
+                                প্রশিক্ষণ</li>
+                            <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> ছয় মাস মেয়াদী আম্মা পারা থেকে
+                                প্রি- নাজেরা কোর্স</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Nazera -->
+            <div id="nazera" class="mb-5 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden fade-in"
+                style="transition-delay: 100ms;">
+                <button
+                    class="accordion-btn w-full px-6 py-5 flex items-center justify-between focus:outline-none bg-emerald-50/50 hover:bg-emerald-100/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-quran text-2xl text-accent"></i>
+                        <h3 class="text-xl font-bold text-gray-800 text-left">📗 নাজেরা বিভাগ</h3>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-white">
+                    <div class="p-6 border-t border-gray-100 text-gray-700 leading-relaxed font-medium">
+                        <p class="font-bold mb-4 text-accent text-lg">📗 নাজেরা বিভাগ(এক বছর মেয়াদী)</p>
+                        <ul class="space-y-3 list-none pl-2 border-l-2 border-emerald-200 ml-2">
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> কুরআনের সাবলীল তিলাওয়াত</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> তাজবীদ ও সিফাতের প্র্যাকটিক্যাল
+                                অনুশীলন</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> সপ্তাহব্যাপী মশক এর ব্যবস্থা</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> তিলাওয়াতে ভুল সংশোধন (Correction
+                                System)এর প্রয়োগ</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> প্রি-হিফজ প্রোগ্রাম(হিফজের জন্য
+                                যারা উপযুক্ত)</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> ইসলামী আকাইদ সিরিজ -২</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> জরুরী মাসায়েল সিরিজ-১</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> দৈনন্দিন মাসনূন দোয়া সিরিজ-২</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> হাদীস সিরিজ(স্প্যানিশ অর্থসহ
+                                মুখস্ত)-১</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> প্র্যাকটিক্যাল সুন্নাহ (আ'মাল)
+                                প্রশিক্ষণ</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> মুযাকারাতুল ঈমান</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> ইসলামী নাশীদ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Hifz -->
+            <div id="hifz" class="mb-5 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden fade-in"
+                style="transition-delay: 200ms;">
+                <button
+                    class="accordion-btn w-full px-6 py-5 flex items-center justify-between focus:outline-none bg-red-50/40 hover:bg-red-100/40 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-star-and-crescent text-2xl text-red-500"></i>
+                        <h3 class="text-xl font-bold text-gray-800 text-left">📕 হিফজুল কুরআন বিভাগ (পাঁচ বছর মেয়াদী)
+                        </h3>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-white">
+                    <div class="p-6 border-t border-gray-100 text-gray-700 leading-relaxed font-medium">
+                        <p class="font-bold mb-4 text-red-500 text-lg">📕 হিফজুল কুরআন বিভাগ (পাঁচ বছর মেয়াদী)</p>
+                        <ul class="space-y-3 list-none pl-2 border-l-2 border-red-200 ml-2 mb-8">
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> পূর্ণাঙ্গ কুরআন হিফজ করার রোড
+                                ম্যাপ</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> দৈনিক সবক, সাত সবক, মনজিল ও
+                                দৈনন্দিন তিলাওয়াত এর মুহাছাবার জন্য "রিপোর্ট বই"</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> সাপ্তাহিক সবিনা</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> সুন্দর লাহানে তিলাওয়াতের জন্য
+                                সাপ্তাহিক মশক এবং ইন্টারন্যাশনাল ক্বারীদের তিলাওয়াত শোনানো</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> জরুরী মাসায়েল সিরিজ-২</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> ইসলামী আকাইদ সিরিজ -৩</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> হাদীস সিরিজ(স্প্যানিশ অর্থসহ
+                                মুখস্ত)-২</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> দৈনন্দিন মাসনূন দোয়া সিরিজ-৩</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> প্র্যাকটিক্যাল সুন্নাহ (আ'মাল)
+                                প্রশিক্ষণ</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> মুযাকারাতুল ঈমান</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> ইসলামী নাশীদ ও কবিতা শেখা</li>
+                            <li><i class="fas fa-check-circle text-red-400 mr-2"></i> জুমার বক্তব্য ও সংক্ষিপ্ত খুতবাহ
+                                প্রশিক্ষণ</li>
+                        </ul>
+
+                        <!-- Highlight Box -->
+                        <div
+                            class="bg-gradient-to-r from-amber-50 to-orange-50 border border-orange-200 border-l-4 border-l-orange-500 p-5 rounded-r-xl shadow-sm transform hover:-translate-y-1 transition-transform">
+                            <p class="font-bold text-orange-600 mb-2 flex items-center text-lg"><i
+                                    class="fas fa-star mr-2"></i> বিশেষ আকর্ষণ:</p>
+                            <p class="text-sm md:text-base text-gray-800 leading-relaxed">হিফজুল কোরআন বিভাগে যারা
+                                ডে-কেয়ার হিসেবে full day একাডেমিতে থাকবে, তাদের জন্য অ্যাডভান্স লেভেলের স্পেনিশ
+                                ল্যাঙ্গুয়েজ কোর্স এর ব্যবস্থা থাকবে।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Uloom (Nested Accordion) -->
+            <div id="uloom"
+                class="mb-5 bg-white rounded-2xl shadow-sm border border-secondary shadow-[0_4px_20px_rgba(212,175,55,0.1)] overflow-hidden fade-in"
+                style="transition-delay: 300ms;">
+                <button
+                    class="accordion-btn w-full px-6 py-6 flex items-center justify-between focus:outline-none bg-gradient-to-r from-amber-50/80 to-yellow-50/50 hover:bg-amber-100/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-graduation-cap text-3xl text-secondary"></i>
+                        <h3 class="text-xl md:text-2xl font-extrabold text-primary text-left">📙 উলুমে ইসলামিয়্যাহ
+                            বিভাগ</h3>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-white">
+                    <div class="p-4 md:p-8 border-t border-gray-100">
+
+                        <!-- Nested Accordion 1 (Youth Program) -->
+                        <div id="uloom1"
+                            class="mb-6 border border-gray-200 rounded-xl overflow-hidden bg-gray-50/50 hover:shadow-md transition-shadow">
+                            <button
+                                class="accordion-btn w-full px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-gray-100 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-users text-accent text-lg"></i>
+                                    <h4 class="font-bold text-gray-800 md:text-lg text-left">📌 ফরজে আইন কোর্স-Youth
+                                        Program- (দুই বছর মেয়াদী)</h4>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300 text-sm"></i>
+                            </button>
+                            <div class="accordion-content bg-white">
+                                <div
+                                    class="p-5 md:p-6 border-t border-gray-200 text-sm md:text-base text-gray-700 space-y-6">
+
+                                    <div>
+                                        <p class="font-bold text-primary mb-2 text-lg border-b border-gray-100 pb-2">১️⃣
+                                            তাজবীদ ও কুরআন</p>
+                                        <ul class="list-none pl-2 space-y-2 mt-3">
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                নূরানী কায়েদা সহ মৌলিক মাখারিজ ও সিফাত</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                পবিত্র কুরআনের নির্ধারিত অংশ থেকে সঠিক তিলাওয়াত শেখা</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                ছোট সূরা সমূহ সঠিক উচ্চারণসহ মুখস্থ করা (নামাজের জন্য প্রয়োজনীয়)</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                কুরআন তিলাওয়াতের ব্যবহারিক অনুশীলন</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <p class="font-bold text-primary mb-2 text-lg border-b border-gray-100 pb-2">২️⃣
+                                            আক্বীদা (ইসলামী বিশ্বাস)</p>
+                                        <ul class="list-none pl-2 space-y-2 mt-3 text-justify">
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                ঈমানের ৬টি স্তম্ভ সম্পর্কে ধারণা</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                معرفة الله (তাওহীদ – আল্লাহকে চেনা)</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                নবী ও সাহাবাদের সম্পর্কে সঠিক বিশ্বাস (রিসালাহ)</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                তাকদীর (কদর) ও আখিরাত</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                শিরক, বিদআত এবং কবীরা গুনাহ: সংজ্ঞা, গুরুত্ব ও তা থেকে বাঁচার উপায়</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <p class="font-bold text-primary mb-2 text-lg border-b border-gray-100 pb-2">৩️⃣
+                                            ফিকহ (ইবাদত ও সুন্নাহ)</p>
+                                        <ul class="list-none pl-2 space-y-2 mt-3">
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                পবিত্রতা (ওজু, গোসল, তায়াম্মুম) ও এর ব্যবহারিক নিয়মাবলি</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                নামাজের বিশুদ্ধ নিয়ম, শর্ত ও ওয়াজিবসমূহ</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                রোজা, যাকাত ও হজের প্রাথমিক ধারণা</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                হালাল-হারাম ও দৈনন্দিন জীবনে ইসলামিক দৃষ্টিভঙ্গি</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <p class="font-bold text-primary mb-2 text-lg border-b border-gray-100 pb-2">৪️⃣
+                                            দাওয়াহ ও আখলাক</p>
+                                        <ul class="list-none pl-2 space-y-2 mt-3">
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                পিতা-মাতা, শিক্ষক ও বড়দের প্রতি সম্মান প্রদর্শন</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                সততা, আমানতদারি ও উত্তম চরিত্র গঠন</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                ইউরোপের সমাজে একজন মুসলিম হিসেবে দায়িত্ব ও কর্তব্য</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                বদভ্যাস ও পশ্চিমা অপসংস্কৃতি থেকে বেঁচে থাকার উপায়</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <p class="font-bold text-primary mb-2 text-lg border-b border-gray-100 pb-2">৫️⃣
+                                            ইলম অর্জনের গুরুত্ব ও আদব</p>
+                                        <ul class="list-none pl-2 space-y-2 mt-3">
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                ইলম শিক্ষার ফজিলত</li>
+                                            <li><i class="fas fa-circle text-[8px] text-accent mr-2 align-middle"></i>
+                                                উস্তাদের প্রতি আদব এবং দ্বীনের প্রতি ভালোবাসা তৈরি</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nested Accordion 2 (Arabic) -->
+                        <div id="uloom2"
+                            class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50/50 hover:shadow-md transition-shadow">
+                            <button
+                                class="accordion-btn w-full px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-gray-100 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-language text-secondary text-lg"></i>
+                                    <h4 class="font-bold text-gray-800 md:text-lg text-left">📌 ২ বছর মেয়াদি আরবি ভাষা ও
+                                        বেসিক মাসায়েল কোর্স</h4>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-gray-400 accordion-icon transition-transform duration-300 text-sm"></i>
+                            </button>
+                            <div class="accordion-content bg-white">
+                                <div class="p-5 md:p-6 border-t border-gray-200 text-sm md:text-base text-gray-700">
+                                    <ul class="list-none pl-2 space-y-4">
+                                        <li><i class="fas fa-check text-secondary mr-2"></i> আরব বিশ্বের প্রসিদ্ধ
+                                            কারিকুলামগুলোর সমন্বয়ে স্পেশাল সিলেবাস</li>
+                                        <li><i class="fas fa-check text-secondary mr-2"></i> কোরআন-সুন্নাহর অর্থ বোঝা
+                                            এবং আরবি ভাষায় স্পিকিং এবং রাইটিংএর দক্ষতা</li>
+                                        <li><i class="fas fa-check text-secondary mr-2"></i> ফিকহে হানাফী থেকে প্রাথমিক
+                                            মাসায়েল</li>
+                                        <li><i class="fas fa-check text-secondary mr-2"></i> এডভান্স লেভেলের স্প্যানিশ
+                                            ল্যাঙ্গুয়েজ কোর্স</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="islamic-gradient text-white pt-10 pb-6 border-t-4 border-secondary mt-auto">
+        <div class="text-center">
+            <p class="text-emerald-100">&copy; 2026 Darul Amal Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নোটিশ বোর্ড | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B',
+                        secondary: '#D4AF37',
+                        accent: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Compact Navigation Header -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="Darul Amal Logo" class="h-10 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=DARUL+AMAL+ACADEMY'">
+                        <span class="font-bold text-lg text-primary md:hidden lg:block">DARUL AMAL ACADEMY</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">🏠
+                        হোম</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📖
+                        একাডেমী পরিচিতি</a>
+                    <a href="features.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">⭐
+                        বৈশিষ্ট্য</a>
+                    <a href="curriculum.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">📚 সিলেবাস</a>
+                    <a href="departments.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">🏫 বিভাগসমূহ</a>
+                    <a href="contact.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📞
+                        যোগাযোগ</a>
+
+                    <!-- Desktop 3 Dot Menu -->
+                    <div class="relative group cursor-pointer ml-2">
+                        <i class="fas fa-ellipsis-v text-primary text-xl px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 transition"></i>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <a href="admission.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium border-b border-gray-100">📝
+                                ভর্তি</a>
+                            <a href="notice.html"
+                                class="block px-4 py-3 text-sm text-primary bg-emerald-50 font-medium">📌
+                                নোটিশ বোর্ড</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-primary focus:outline-none p-3 rounded-full hover:bg-gray-100 transition">
+                        <i class="fas fa-ellipsis-v text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏠
+                    হোম</a>
+                <a href="about.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📖
+                    একাডেমী পরিচিতি</a>
+                <a href="features.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">⭐
+                    বৈশিষ্ট্য</a>
+                <a href="curriculum.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📚
+                    সিলেবাস</a>
+                <a href="departments.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏫
+                    বিভাগসমূহ</a>
+                <a href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📞
+                    যোগাযোগ</a>
+                <div class="border-t border-gray-200 mt-2 mb-2"></div>
+                <a href="admission.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📝
+                    ভর্তি</a>
+                <a href="notice.html"
+                    class="block px-4 py-3 rounded-lg text-base font-bold text-primary bg-emerald-50 transition">📌
+                    নোটিশ বোর্ড</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-28 pb-10 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">নোটিশ বোর্ড</h1>
+            <div class="w-16 h-1 bg-secondary mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 text-lg">একাডেমির সর্বশেষ বিজ্ঞপ্তি এবং ইভেন্টসমূহ</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12 relative z-10 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Notices Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in" style="transition-delay: 100ms;">
+                
+                <!-- Notice Card 1 (Placeholder for Latest Notice) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <!-- Image/Poster Area -->
+                    <div class="h-64 sm:h-80 w-full bg-emerald-50 relative flex items-center justify-center overflow-hidden border-b border-gray-100">
+                        <!-- Uploaded Poster Image goes here. To add an image, replace the below div with an <img> tag -->
+                        <div class="text-center p-6 text-primary/40 group-hover:scale-105 transition-transform duration-500">
+                            <i class="far fa-image text-5xl mb-3"></i>
+                            <p class="text-sm font-semibold">ভর্তির বিজ্ঞপ্তি বা ইভেন্ট পোস্টার<br>(images/notice-1.jpg)</p>
+                        </div>
+                        
+                        <!-- Fixed Badge -->
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                            নতুন
+                        </div>
+                    </div>
+                    
+                    <!-- Text Info Area -->
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt text-secondary"></i>
+                            <span>২৫ মার্চ, ২০২৬</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">নতুন শিক্ষাবর্ষে ভর্তি চলছে</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2 mb-4">দারুল আমাল একাডেমির নতুন সেশনের ভর্তি কার্যক্রম শুরু হয়েছে। বিস্তারিত জানতে পোস্টারটি লক্ষ্য করুন বা যোগাযোগ করুন।</p>
+                        
+                        <a href="#" class="inline-block text-secondary font-bold text-sm hover:text-primary transition-colors">
+                            বিস্তারিত দেখুন <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Notice Card 2 (Placeholder) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-64 sm:h-80 w-full bg-gray-50 relative flex items-center justify-center overflow-hidden border-b border-gray-100">
+                        <!-- Uploaded Poster Image goes here -->
+                        <div class="text-center p-6 text-gray-400 group-hover:scale-105 transition-transform duration-500">
+                            <i class="far fa-file-pdf text-5xl mb-3"></i>
+                            <p class="text-sm font-semibold">পরীক্ষার রুটিন<br>(PDF বা ছবি)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt text-secondary"></i>
+                            <span>১০ ফেব্রুয়ারি, ২০২৬</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">ত্রৈমাসিক পরীক্ষার রুটিন</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2 mb-4">সব বিভাগের সম্মানীত ছাত্র-ছাত্রীদের অবগতির জন্য জানানো যাচ্ছে যে আগামী মাসের প্রথম সপ্তাহে ত্রৈমাসিক পরীক্ষা অনুষ্ঠিত হবে।</p>
+                        
+                        <a href="#" class="inline-block text-secondary font-bold text-sm hover:text-primary transition-colors">
+                            ডাউনলোড করুন <i class="fas fa-download ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Empty State / Load More (Optional) -->
+            <div class="mt-12 text-center fade-in" style="transition-delay: 200ms;">
+                <p class="text-gray-500 mb-4"><i class="fas fa-history text-secondary mr-2"></i> আরও পুরোনো নোটিশ দেখতে নিচে ক্লিক করুন</p>
+                <button class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                    পুরোনো নোটিশসমূহ
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="islamic-gradient text-white pt-10 pb-6 border-t-4 border-secondary mt-auto">
+        <div class="text-center">
+            <p class="text-emerald-100">&copy; 2026 Darul Amal Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>একাডেমি ড্যাশবোর্ড | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B',
+                        secondary: '#D4AF37',
+                        accent: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    <script>
+        if (localStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+        
+        // Initialize Firebase
+        if (typeof firebaseConfig !== 'undefined' && firebaseConfig.apiKey !== "YOUR_API_KEY") {
+            firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+        }
+
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminEmail');
+            window.location.href = 'login.html';
+        }
+    </script>
+    <style>
+        .admin-sidebar {
+            transition: all 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-primary text-white flex-shrink-0 hidden md:flex flex-col border-r border-emerald-800">
+            <div class="p-6 border-b border-emerald-800 flex items-center gap-3">
+                <img src="images/logo.png" alt="Logo" class="w-10 h-10 bg-white rounded-full p-1" onerror="this.src='https://via.placeholder.com/40'">
+                <span class="font-bold text-lg tracking-wider">ADMIN PANEL</span>
+            </div>
+            <nav class="flex-grow py-6 px-4 space-y-2">
+                <a href="#" class="flex items-center gap-3 p-3 bg-emerald-800/50 rounded-lg text-secondary font-bold">
+                    <i class="fas fa-th-large w-5"></i> ড্যাশবোর্ড
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:bg-emerald-800/30 rounded-lg transition">
+                    <i class="fas fa-users w-5 text-emerald-300"></i> ভর্তি তালিকা
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:bg-emerald-800/30 rounded-lg transition">
+                    <i class="fas fa-bullhorn w-5 text-emerald-300"></i> নোটিশ পোস্ট
+                </a>
+                
+                <div class="pt-6 pb-2">
+                    <p class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold px-3 mb-2">অনুমোদিত অ্যাডমিন</p>
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 px-3 py-1 text-xs text-emerald-200">
+                            <i class="fas fa-circle text-[6px] text-accent"></i> jabbargaffarabdul@gmail.com
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1 text-xs text-emerald-200">
+                            <i class="fas fa-circle text-[6px] text-accent"></i> abdurrahmanbd898@gmail.com
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" onclick="logout(); return false;" class="flex items-center gap-3 p-3 hover:bg-red-500/30 rounded-lg transition text-red-300 hover:text-red-100 mt-auto">
+                    <i class="fas fa-sign-out-alt w-5"></i> লগ আউট
+                </a>
+            </nav>
+            <div class="p-6 border-t border-emerald-800">
+                <a href="index.html" class="flex items-center gap-3 text-emerald-300 hover:text-white transition">
+                    <i class="fas fa-external-link-alt"></i> ওয়েবসাইট দেখুন
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow overflow-y-auto w-full">
+            
+            <!-- Topbar -->
+            <header class="bg-white shadow-sm h-16 flex items-center justify-between px-6 md:px-10 sticky top-0 z-20">
+                <div class="flex items-center gap-4">
+                    <button class="md:hidden text-primary text-xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="text-xl font-bold text-primary">স্বাগতম, <span id="admin-name-display" class="text-emerald-600">অ্যাডমিন</span></h2>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="relative group cursor-pointer">
+                        <i class="fas fa-bell text-gray-500 hover:text-primary transition text-lg"></i>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] flex items-center justify-center rounded-full">৩</span>
+                    </div>
+                    <div class="flex items-center gap-3 border-l pl-6 border-gray-100">
+                        <div class="text-right hidden sm:block">
+                            <p class="text-xs font-bold text-primary italic">Darul Amal Academy</p>
+                        </div>
+                        <img src="images/logo.png" class="w-10 h-10 rounded-full border border-gray-200" onerror="this.src='https://via.placeholder.com/40'">
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6 md:p-10 max-w-7xl mx-auto space-y-10">
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="stats-card bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary">
+                        <p class="text-gray-500 text-sm font-medium mb-1">মোট ভর্তি আবেদন</p>
+                        <h3 id="stat-total" class="text-3xl font-black text-primary">০</h3>
+                    </div>
+                    <div class="stats-card bg-white p-6 rounded-2xl shadow-sm border-l-4 border-secondary">
+                        <p class="text-gray-500 text-sm font-medium mb-1">নতুন আবেদন (আজ)</p>
+                        <h3 id="stat-today" class="text-3xl font-black text-secondary">০</h3>
+                    </div>
+                    <div class="stats-card bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+                        <p class="text-gray-500 text-sm font-medium mb-1">বিভাগ ৪ (Uloom)</p>
+                        <h3 id="stat-uloom" class="text-3xl font-black text-emerald-600">০</h3>
+                    </div>
+                    <div class="stats-card bg-white p-6 rounded-2xl shadow-sm border-l-4 border-gray-400">
+                        <p class="text-gray-500 text-sm font-medium mb-1">অন্যান্য তথ্য</p>
+                        <h3 id="stat-others" class="text-3xl font-black text-gray-600">--</h3>
+                    </div>
+                </div>
+
+                <!-- Recent Admissions Table -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="p-6 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <h3 class="text-lg font-bold text-primary flex items-center gap-2">
+                            <i class="fas fa-list-ul text-secondary"></i> সাম্প্রতিক ভর্তি আবেদনসমূহ
+                        </h3>
+                        <div class="flex gap-2">
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-emerald-800 transition">
+                                <i class="fas fa-download mr-1"></i> ডাউনলোড এক্সেল
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50 text-gray-500 uppercase text-xs font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4">শিক্ষার্থীর নাম</th>
+                                    <th class="px-6 py-4">বিভাগ</th>
+                                    <th class="px-6 py-4">ফোন নম্বর</th>
+                                    <th class="px-6 py-4">আবেদনের তারিখ</th>
+                                    <th class="px-6 py-4">অবস্থা</th>
+                                    <th class="px-6 py-4 text-center">অ্যাকশন</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admissions-table-body" class="divide-y divide-gray-100">
+                                <!-- Data will load here from Firestore -->
+                                <tr id="loading-row">
+                                    <td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">
+                                        <i class="fas fa-spinner fa-spin mr-2"></i> ডাটা লোড হচ্ছে... (firebase-config.js চেক করুন)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Details Modal -->
+                <div id="details-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+                    <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl transform transition-all">
+                        <div class="bg-primary p-6 text-white flex justify-between items-center">
+                            <h3 class="text-xl font-bold flex items-center gap-2">
+                                <i class="fas fa-user-graduate"></i> আবেদনকারীর বিস্তারিত তথ্য
+                            </h3>
+                            <button onclick="closeModal()" class="text-white/80 hover:text-white transition text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div id="modal-content" class="p-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto">
+                            <!-- Populated by JS -->
+                        </div>
+                        <div class="p-6 border-t border-gray-100 flex justify-end gap-3 bg-gray-50">
+                            <button onclick="closeModal()" class="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded-xl font-bold text-gray-700 transition">বন্ধ করুন</button>
+                            <button class="px-6 py-2 bg-primary text-white rounded-xl font-bold hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20">প্রিন্ট করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    window.onload = function() {
+                        const modal = document.getElementById('details-modal');
+                        
+                        // Close modal on escape
+                        window.onkeydown = (e) => { if(e.key === 'Escape') closeModal(); };
+
+                        window.viewDetails = function(dataJson) {
+                            const data = JSON.parse(decodeURIComponent(dataJson));
+                            const content = document.getElementById('modal-content');
+                            
+                            const fields = [
+                                { label: 'শিক্ষার্থীর নাম', value: data.name, icon: 'fa-user' },
+                                { label: 'জন্ম তারিখ', value: data.dob, icon: 'fa-calendar' },
+                                { label: 'পিতার নাম', value: data.father, icon: 'fa-male' },
+                                { label: 'মাতার নাম', value: data.mother, icon: 'fa-female' },
+                                { label: 'ফোন নম্বর', value: data.phone, icon: 'fa-phone' },
+                                { label: 'ইমেইল', value: data.email, icon: 'fa-envelope' },
+                                { label: 'ঠিকানা', value: data.address, icon: 'fa-map-marker-alt', full: true },
+                                { label: 'বিভাগ', value: data.department, icon: 'fa-university' },
+                                { label: 'পূর্ববর্তী শিক্ষা', value: data.previous_edu, icon: 'fa-book' },
+                                { label: 'অতিরিক্ত তথ্য', value: data.message, icon: 'fa-comment', full: true }
+                            ];
+
+                            content.innerHTML = fields.map(f => `
+                                <div class="${f.full ? 'md:col-span-2' : ''} space-y-1">
+                                    <p class="text-[10px] text-gray-400 uppercase font-black tracking-widest flex items-center gap-2">
+                                        <i class="fas ${f.icon} text-primary"></i> ${f.label}
+                                    </p>
+                                    <p class="text-gray-800 font-bold bg-gray-50 p-3 rounded-xl border border-gray-100">${f.value || 'N/A'}</p>
+                                </div>
+                            `).join('');
+                            
+                            modal.classList.remove('hidden');
+                        };
+
+                        window.closeModal = function() {
+                            modal.classList.add('hidden');
+                        };
+
+                        if (typeof db !== 'undefined') {
+                            db.collection("admissions").orderBy("timestamp", "desc").onSnapshot((querySnapshot) => {
+                                const tableBody = document.getElementById("admissions-table-body");
+                                tableBody.innerHTML = ""; // Clear loader
+                                
+                                // Display logged in admin email/name
+                                const adminEmail = localStorage.getItem('adminEmail');
+                                if (adminEmail) {
+                                    const nameDisplay = document.getElementById('admin-name-display');
+                                    if (nameDisplay) {
+                                        nameDisplay.textContent = adminEmail.split('@')[0];
+                                    }
+                                }
+
+                                // Reset stats
+                                let total = querySnapshot.size;
+                                let todayCount = 0;
+                                let uloomCount = 0;
+                                const todayDate = new Date().toLocaleDateString('bn-BD');
+
+                                document.getElementById("stat-total").textContent = total.toLocaleString('bn-BD');
+
+                                if (querySnapshot.empty) {
+                                    tableBody.innerHTML = "<tr><td colspan='6' class='px-6 py-10 text-center text-gray-400'>কোন আবেদন খুঁজে পাওয়া যায়নি।</td></tr>";
+                                    document.getElementById("stat-today").textContent = "০";
+                                    document.getElementById("stat-uloom").textContent = "০";
+                                    return;
+                                }
+
+                                querySnapshot.forEach((doc) => {
+                                    const data = doc.data();
+                                    const date = data.timestamp ? data.timestamp.toDate() : null;
+                                    const dateString = date ? date.toLocaleDateString('bn-BD') : 'N/A';
+                                    
+                                    // Calculate Stats
+                                    if (date && date.toLocaleDateString('bn-BD') === todayDate) {
+                                        todayCount++;
+                                    }
+                                    if (data.department === "Uloom") {
+                                        uloomCount++;
+                                    }
+
+                                    // Stringify data for modal
+                                    const dataStr = encodeURIComponent(JSON.stringify(data));
+
+                                    const row = `
+                                        <tr class="hover:bg-gray-50 transition border-b border-gray-50 last:border-0 text-sm">
+                                            <td class="px-6 py-5">
+                                                <div class="font-black text-primary">${data.name || 'নাম নেই'}</div>
+                                                <div class="text-[10px] text-gray-400 font-bold uppercase">${data.email || ''}</div>
+                                            </td>
+                                            <td class="px-6 py-5">
+                                                <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg font-bold">${data.department || 'N/A'}</span>
+                                            </td>
+                                            <td class="px-6 py-5 font-bold text-gray-600">${data.phone || 'N/A'}</td>
+                                            <td class="px-6 py-5 text-gray-500">${dateString}</td>
+                                            <td class="px-6 py-5">
+                                                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-[10px] font-black uppercase">${data.status || 'NEW'}</span>
+                                            </td>
+                                            <td class="px-6 py-5 text-center">
+                                                <div class="flex items-center justify-center gap-1">
+                                                    <button onclick="viewDetails('${dataStr}')" class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition flex items-center justify-center shadow-sm" title="বিস্তারিত দেখুন">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button onclick="if(confirm('আপনি কি এই আবেদনটি মুছে ফেলতে চান?')) db.collection('admissions').doc('${doc.id}').delete()" class="w-8 h-8 rounded-lg bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition flex items-center justify-center shadow-sm" title="মুছে ফেলুন">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>`;
+                                    tableBody.innerHTML += row;
+                                });
+
+                                // Update Stat Counters
+                                document.getElementById("stat-today").textContent = todayCount.toLocaleString('bn-BD');
+                                document.getElementById("stat-uloom").textContent = uloomCount.toLocaleString('bn-BD');
+                            });
+                        }
+                    };
+                </script>
+                </div>
+
+                <!-- Footer placeholder -->
+                <div class="text-center py-6 text-gray-400 text-sm">
+                    &copy; 2026 Darul Amal Academy Admin Panel. Designed for Excellence.
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

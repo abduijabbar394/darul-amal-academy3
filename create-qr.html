@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR কোড জেনারেটর | Darul Amal Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .qr-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(6, 78, 59, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-emerald-50 h-screen flex items-center justify-center p-6">
+    <div class="qr-card p-10 max-w-sm w-full text-center space-y-6">
+        <h1 class="text-2xl font-bold text-emerald-900 mb-4">আপনার কিউআর (QR) কোড</h1>
+        <p class="text-sm text-gray-600 mb-6">নিচে আপনার ওয়েবসাইটের লিঙ্ক দিন এবং কিউআর কোডটি সেভ করে নিন</p>
+        
+        <div id="qr-display" class="bg-white p-4 rounded-xl border-2 border-dashed border-emerald-200 inline-block mb-6">
+            <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://darulamal.com" alt="QR Code" class="w-full h-auto">
+        </div>
+
+        <input type="text" id="url-input" placeholder="আপনার ওয়েবসাইটের লিঙ্ক দিন..." value="https://darulamal.com" 
+               class="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:ring-4 focus:ring-emerald-100 transition-all outline-none font-bold text-center">
+        
+        <button onclick="updateQR()" class="w-full bg-emerald-600 hover:bg-emerald-800 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+            <i class="fas fa-sync-alt"></i> কোড আপডেট করুন
+        </button>
+
+        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-6">এই কিউআর কোডটি ডাউনলোড করে ব্যানার বা ভিজিটিং কার্ডে ব্যবহার করতে পারবেন</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        function updateQR() {
+            const input = document.getElementById('url-input').value;
+            const qrImage = document.getElementById('qr-image');
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(input)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ | Darul Amal Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B',
+                        secondary: '#D4AF37',
+                        accent: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Compact Navigation Header -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="Darul Amal Logo" class="h-10 w-auto object-contain"
+                            onerror="this.src='https://via.placeholder.com/150x50?text=DARUL+AMAL+ACADEMY'">
+                        <span class="font-bold text-lg text-primary md:hidden lg:block">DARUL AMAL ACADEMY</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">🏠
+                        হোম</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">📖
+                        একাডেমী পরিচিতি</a>
+                    <a href="features.html" class="nav-link text-gray-700 font-medium hover:text-primary transition">⭐
+                        বৈশিষ্ট্য</a>
+                    <a href="curriculum.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">📚 সিলেবাস</a>
+                    <a href="departments.html"
+                        class="nav-link text-gray-700 font-medium hover:text-primary transition">🏫 বিভাগসমূহ</a>
+                    <a href="contact.html" class="nav-link active text-primary font-bold">📞 যোগাযোগ</a>
+                    <!-- Desktop 3 Dot Menu -->
+                    <div class="relative group cursor-pointer ml-2">
+                        <i
+                            class="fas fa-ellipsis-v text-gray-600 hover:text-primary text-xl px-4 py-2 rounded-full hover:bg-gray-100 transition"></i>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <a href="admission.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium border-b border-gray-100">📝
+                                ভর্তি</a>
+                            <a href="notice.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-primary font-medium">📌
+                                নোটিশ বোর্ড</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-primary focus:outline-none p-3 rounded-full hover:bg-gray-100 transition">
+                        <i class="fas fa-ellipsis-v text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏠
+                    হোম</a>
+                <a href="about.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📖
+                    একাডেমী পরিচিতি</a>
+                <a href="features.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">⭐
+                    বৈশিষ্ট্য</a>
+                <a href="curriculum.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📚
+                    সিলেবাস</a>
+                <a href="departments.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">🏫
+                    বিভাগসমূহ</a>
+                <a href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-base font-bold text-primary bg-emerald-50">📞 যোগাযোগ</a>
+                <div class="border-t border-gray-200 mt-2 mb-2"></div>
+                <a href="admission.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📝
+                    ভর্তি</a>
+                <a href="notice.html"
+                    class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition">📌
+                    নোটিশ বোর্ড</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-28 pb-10 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">যোগাযোগ করুন</h1>
+            <div class="w-16 h-1 bg-secondary mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 text-lg">যেকোনো তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-10">
+
+                <!-- Left Column (Contact Info + Form) -->
+                <div class="w-full lg:w-5/12 space-y-8 fade-in">
+
+                    <!-- Contact Info Card -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-2xl font-bold text-primary mb-6">আমাদের ঠিকানা</h3>
+
+                        <div class="space-y-6 text-gray-700">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-emerald-50 text-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="text-sm text-gray-500 font-semibold mb-1">ফোন</p>
+                                    <p class="font-bold text-lg">+34 611 81 74 44</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-emerald-50 text-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="text-sm text-gray-500 font-semibold mb-1">ইমেইল</p>
+                                    <p class="font-bold text-lg break-all">academydarulamal@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-emerald-50 text-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="text-sm text-gray-500 font-semibold mb-1">ঠিকানা</p>
+                                    <p class="font-bold text-lg leading-snug">C/ Vistalegre, 18, local 3,<br>Ciutat
+                                        Vella, 08001 Barcelona, Spain</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 relative overflow-hidden">
+                        <!-- Decorative bg -->
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary/10 rounded-full blur-2xl z-0 pointer-events-none">
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-primary mb-6 relative z-10">মেসেজ পাঠান</h3>
+                        <form action="#" class="space-y-5 relative z-10">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার নাম</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all outline-none bg-gray-50 focus:bg-white text-gray-800"
+                                    placeholder="নাম লিখুন" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">ইমেইল ঠিকানা</label>
+                                <input type="email"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all outline-none bg-gray-50 focus:bg-white text-gray-800"
+                                    placeholder="ইমেইল লিখুন" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">ফোন নম্বর</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all outline-none bg-gray-50 focus:bg-white text-gray-800"
+                                    placeholder="ফোন নম্বর লিখুন">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার মেসেজ</label>
+                                <textarea rows="4"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all outline-none bg-gray-50 focus:bg-white text-gray-800 resize-none"
+                                    placeholder="আপনার বার্তা লিখুন..." required></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary hover:bg-green-800 text-white font-bold py-4 rounded-xl shadow-md transition-all hover:-translate-y-1 hover:shadow-lg flex justify-center items-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Right Column (Google Map) -->
+                <div class="w-full lg:w-7/12 h-[500px] lg:h-auto min-h-[500px] bg-gray-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white fade-in relative group"
+                    style="transition-delay: 200ms;">
+                    <!-- Map Overlay Header -->
+                    <div class="absolute top-0 left-0 w-full bg-gradient-to-b from-[#064E3B]/90 to-transparent p-6 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#D4AF37] w-12 h-12 rounded-full flex items-center justify-center text-[#064E3B] shadow-lg">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-white drop-shadow-md">Darul Amal Academy</h4>
+                                <p class="text-sm text-emerald-50 drop-shadow-md">Barcelona, Spain</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Embedded Google Map -->
+                    <iframe
+                        src="https://maps.google.com/maps?q=https://maps.app.goo.gl/uJW1fB3Ym16be4Dh8&t=m&z=16&output=embed&iwloc=near"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="w-full h-full object-cover filter saturate-[1.2] contrast-[1.1]"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    
+                    <!-- "Get Directions" Floating Button -->
+                    <a href="https://maps.app.goo.gl/uJW1fB3Ym16be4Dh8" target="_blank"
+                       class="absolute bottom-6 left-1/2 md:left-auto md:right-6 transform -translate-x-1/2 md:translate-x-0 bg-gradient-to-r from-[#064E3B] to-[#047857] hover:from-[#047857] hover:to-[#064E3B] text-white font-bold py-3 px-8 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.3)] transition-all hover:-translate-y-1 hover:shadow-2xl flex items-center gap-3 border border-[#D4AF37]/50 z-20">
+                        <i class="fas fa-location-arrow text-[#D4AF37] animate-pulse"></i>
+                        <span class="tracking-wide">ডিরেকশন পান</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/34611817444" target="_blank"
+            class="fixed bottom-8 left-8 bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform hover:-translate-y-1 hover:scale-105 z-50 text-3xl group"
+            title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span
+                class="absolute left-16 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none before:content-[''] before:absolute before:right-full before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-transparent before:border-r-white">
+                Chat on WhatsApp
+            </span>
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="islamic-gradient text-white pt-10 pb-6 border-t-4 border-secondary mt-auto">
+        <div class="text-center">
+            <p class="text-emerald-100">&copy; 2026 Darul Amal Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
